@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Nunito, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["400", "600", "700", "900"],
 });
 
 const inter = Inter({
@@ -14,25 +14,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fellory Official - Pinky Body Care",
-  description: "Smooth, bright, and fragrant body care products for radiant skin. Discover natural ingredients, gentle formulas, and a luxurious self-care experience with Fellory.",
+  title: "Fellory - Pinky Body Care | Solusi Kulit Cerah Ramah Kantong",
+  description: "Body care viral yang aman BPOM dengan harga pelajar. Cerahkan kulit dengan Fellory Pinky - produk body care terpercaya Gen Z. Cek harga spesial hari ini!",
   keywords: [
     "Fellory",
-    "body care",
-    "skin care",
-    "natural ingredients",
-    "fragrant",
-    "smooth skin",
-    "bright skin",
-    "luxury self-care",
-    "beauty products",
-    "moisturizer",
-    "body lotion"
+    "body care lokal",
+    "kulit cerah",
+    "BPOM",
+    "harga pelajar",
+    "body lotion",
+    "Miss V spray",
+    "bar soap",
+    "glow up ramah kantong",
+    "body care viral",
+    "aman bumil busui",
+    "skincare lokal Indonesia"
   ],
   authors: [{ name: "Fellory Team", url: "https://fellory.my.id" }],
+  creator: "Fellory Official",
   openGraph: {
-    title: "Fellory - Pinky Body Care",
-    description: "Smooth, bright, and fragrant body care products for radiant skin.",
+    title: "Fellory - Pinky Body Care | Glow Up Ramah Kantong",
+    description: "Body care viral aman BPOM dengan harga pelajar. Kulit cerah, awet seharian, harga terjangkau!",
     url: "https://fellory.my.id",
     siteName: "Fellory",
     images: [
@@ -40,25 +42,31 @@ export const metadata: Metadata = {
         url: "https://fellory.my.id/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fellory - Pinky Body Care",
+        alt: "Fellory - Pinky Body Care | Glow Up Ramah Kantong",
+        type: "image/jpeg",
       },
     ],
-    locale: "en_US",
+    locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Fellory - Pinky Body Care",
-    description: "Smooth, bright, and fragrant body care products for radiant skin.",
+    description: "Glow up ramah kantong dengan produk body care BPOM.",
     images: ["https://fellory.my.id/og-image.jpg"],
-    site: "@fellory",
-    creator: "@fellory",
+    creator: "@fellory_official",
   },
   metadataBase: new URL("https://fellory.my.id"),
   robots: {
     index: true,
     follow: true,
     nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -68,10 +76,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
+      <head>
+        <meta name="theme-color" content="#ec4899" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased`}
-        style={{ fontFamily: 'var(--font-inter)' }}
+        className={`${nunito.variable} ${inter.variable} font-sans antialiased bg-white text-stone-800`}
+        style={{ fontFamily: 'var(--font-nunito)' }}
       >
         {children}
       </body>
